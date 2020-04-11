@@ -9,8 +9,8 @@ We have a basic bash kickstart script which can get you off and running quickly 
 
 1. `cd ~`
 2. `git clone wget https://github.com/80at8/freeradius3_genie`
-3. `sudo chmod 755 ~/freeradius_genie/src/kickstart.sh  `
-4. `sudo ~/freeradius_genie/src/kickstart.sh`
+3. `sudo chmod 755 ~/freeradius3_genie/src/kickstart.sh  `
+4. `sudo ~/freeradius3_genie/src/kickstart.sh`
 5. No errors? Great! Go to section 'Completing preliminary installation', otherwise start at step 1 below.
 
 ---------------

@@ -5,10 +5,10 @@ An installer to setup and configure FreeRADIUS for use with Sonar (this version 
 
 This installer is designed to be run on [Ubuntu 18.04](http://www.ubuntu.com/download/server), but should work on most versions of Ubuntu. Download and install Ubuntu on the server you wish to run FreeRADIUS on. If you want to host it online, I recommend [Digital Ocean](https://m.do.co/c/84841b1bca8e).
 
-We have a basic bash kickstart script which can get you off and running quickly if you have a clean Ubuntu 18.04 installation. It will download mysql, freeradius, and create the swap space on the server. 
+We have a basic bash kickstart script which can get you off and running quickly if you have a clean Ubuntu 18.04 installation. It will download mysql, freeradius, and create the swap space on the server. Run these commands from the root of your home directory.
 
 1. `git clone wget https://github.com/80at8/freeradius3_genie`
-2. `cd ~/freeradius_genie/`
+2. `cd ~/freeradius3_genie/`
 3. `./src/kickstart.sh`
 4. No errors? Great! Go to section 'Completing preliminary installation', otherwise start at step 1 below.
 

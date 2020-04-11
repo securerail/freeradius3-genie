@@ -33,9 +33,9 @@ class FreeRadiusSetup
             try {
                 CommandExecutor::executeCommand("/bin/cp " . __DIR__ . $c . "radiusd.conf /etc/freeradius/3.0/");
                 CommandExecutor::executeCommand("/bin/cp " . __DIR__ . $c . "sql /etc/freeradius/3.0/mods-available");
-                CommandExecutor::executeCommand("/bin/ln -s /etc/freeradius/3.0/mods-available/sql -t /etc/freeradius/3.0/mods-enabled/");
+                CommandExecutor::executeCommand("/bin/ln -fs /etc/freeradius/3.0/mods-available/sql -t /etc/freeradius/3.0/mods-enabled/");
                 CommandExecutor::executeCommand("/bin/cp " . __DIR__ . $c . "default /etc/freeradius/3.0/sites-available/");
-                CommandExecutor::executeCommand("/bin/ln -s /etc/freeradius/3.0/sites-available/default -t /etc/freeradius/3.0/sites-enabled/");
+                CommandExecutor::executeCommand("/bin/ln -fs /etc/freeradius/3.0/sites-available/default -t /etc/freeradius/3.0/sites-enabled/");
                 CommandExecutor::executeCommand("/bin/sed -i 's/password = \"radpass\"/password = \"$mysqlPassword\"/g' /etc/freeradius/3.0/mods-enabled/sql");
                 CommandExecutor::executeCommand("/usr/sbin/service freeradius restart");
             }

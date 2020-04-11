@@ -8,7 +8,7 @@ This installer is designed to be run on [Ubuntu 18.04](http://www.ubuntu.com/dow
 We have a basic bash kickstart script which can get you off and running quickly if you have a clean Ubuntu 18.04 installation. It will download mysql, freeradius, and create the swap space on the server. Run these commands from the root of your home directory.
 
 1. `cd ~`
-2. `git clone wget https://github.com/80at8/freeradius3_genie`
+2. `git clone https://github.com/80at8/freeradius3_genie`
 3. `sudo chmod 755 ~/freeradius3_genie/src/kickstart.sh  `
 4. `sudo ~/freeradius3_genie/src/kickstart.sh`
 5. No errors? Great! Go to section 'Completing preliminary installation', otherwise start at step 1 below.

@@ -1,9 +1,18 @@
-# FreeRADIUS Genie
-An installer to setup and configure FreeRADIUS for use with Sonar.
+# FreeRADIUS3 Genie
+An installer to setup and configure FreeRADIUS for use with Sonar (this version will work with FreeRADIUS v2.0 or 3.0)
 
 ## Getting started
 
-This installer is designed to be run on [Ubuntu 16.04 64bit](http://www.ubuntu.com/download/server), but should work on most versions of Ubuntu. Download and install Ubuntu on the server you wish to run FreeRADIUS on. If you want to host it online, I recommend [Digital Ocean](https://m.do.co/c/84841b1bca8e).
+This installer is designed to be run on [Ubuntu 18.04](http://www.ubuntu.com/download/server), but should work on most versions of Ubuntu. Download and install Ubuntu on the server you wish to run FreeRADIUS on. If you want to host it online, I recommend [Digital Ocean](https://m.do.co/c/84841b1bca8e).
+
+We have a basic bash kickstart script which can get you off and running quickly if you have a clean Ubuntu 18.04 installation. It will download mysql, freeradius, and create the swap space on the server. 
+
+1. `git clone wget https://github.com/80at8/freeradius3_genie`
+2. `cd ~/freeradius_genie/`
+3. `./src/kickstart.sh`
+4. No errors? Great! Go to section 'Completing preliminary installation', otherwise start at step 1 below.
+
+---------------
 
 Once Ubuntu is installed, SSH in and run the following commands to prepare installation:
 
@@ -37,6 +46,8 @@ To setup swap, run the following commands as root (or by putting 'sudo' in front
 7. `echo "vm.swappiness=10" >> /etc/sysctl.conf`
 8. `/sbin/sysctl vm.vfs_cache_pressure=50`
 9. `echo "vm.vfs_cache_pressure=50" >> /etc/sysctl.conf`
+
+-----------
 
 ## Completing preliminary installation
 
@@ -72,7 +83,7 @@ This is the tool you'll use to do **all** of your configuration - no need to jum
 Let's start by getting the database setup. Highlight the **Initial Configuration** option, press the space bar to select it, and then press enter. You'll see an option titled **Setup initial database structure** - press the space bar to select it, press enter, and your database will be configured. If you
 receive an error message about credentials, double check the root password you placed into your `.env` file in the **Configuration** section.
 
-Once that's completed, we need to setup the FreeRADIUS configuration files. Select **Perform initial FreeRADIUS configuration** by using the space bar to select it, and then pressing enter. This will configure your FreeRADIUS server to use the SQL server as a backend, and restart it.
+Once that's completed, we need to setup the FreeRADIUS configuration files. Select **Perform initial FreeRADIUS configuration** by using the space bar to select it, and then pressing enter. This will configure your FreeRADIUS server to use the SQL server as a backend, and restart it. It will automatically detect the version of FreeRADIUS you're using (2.x.x or 3.x.x) and copy the appropriate flavour of configuration to the /etc/freeradius directory.
 
 ### Managing your NAS
 

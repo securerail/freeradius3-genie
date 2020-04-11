@@ -14,5 +14,7 @@ echo '/swapfile none swap sw 0 0' >> /etc/fstab
 echo 'vm.swappiness=10' >> /etc/sysctl.conf
 /sbin/sysctl vm.vfs_cache_pressure=50
 echo 'vm.vfs_cache_pressure=50' >> /etc/sysctl.c
-
+echo '# PUT YOUR MYSQL PASSWORD YOU JUST ENTERED BELOW, THEN PRESS CTRL+X and Y to SAVE CHANGES' >> ~/freeradius3-genie/.env
+echo 'MYSQL_PASSWORD=changeme' >> ~/freeradius3-genie/.env
 sudo /usr/bin/mysql_secure_installation
+nano ~/.env

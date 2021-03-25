@@ -3,7 +3,10 @@ sudo apt-get update --yes
 sudo apt-get upgrade --yes
 sudo apt-get install --yes php-cli php-mbstring php-mysql unzip
 sudo apt-get install --yes mariadb-server mariadb-client
-sudo apt-get install --yes freeradius freeradius-common freeradius-utils freeradius-mysql
+#sudo apt-get install --yes freeradius freeradius-common freeradius-utils freeradius-mysql
+sudo apt-get install --yes freeradius=2.2.10
+sudo apt-get install --yes freeradius-mysql=2.2.10
+
 
 /usr/bin/fallocate -l 4G /swapfile
 /bin/chmod 600 /swapfile
